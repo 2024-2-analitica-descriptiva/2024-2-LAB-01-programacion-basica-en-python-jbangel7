@@ -6,7 +6,7 @@ utilizar pandas, numpy o scipy.
 """
 
 def pregunta_12():
-    file = open('files\input\data.csv', "r").readlines() #abro el archivo y lo leo linea por linea
+    file = open('\files\input\data.csv', "r").readlines() #abro el archivo y lo leo linea por linea
     x =[z.replace('\n', '') for z in file] # limpio el archivo de los saltos de carro \n.
     x = [z.split('\t') for z in x]         # hago split al archivo a partir de las tabulaciones \t.
 
