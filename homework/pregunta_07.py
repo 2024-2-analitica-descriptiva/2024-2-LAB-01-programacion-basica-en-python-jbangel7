@@ -4,10 +4,50 @@ datos requeridos se encuentran en el archivo data.csv. En este laboratorio
 solo puede utilizar las funciones y librerias basicas de python. No puede
 utilizar pandas, numpy o scipy.
 """
-
+from collections import Counter
+from collections import defaultdict
+from operator import itemgetter
 
 def pregunta_07():
-    """
+
+    file = open('files\input\data.csv', "r").readlines() #abro el archivo y lo leo linea por linea
+    x = [z.replace('\n', '') for z in file] 
+    x = [z.split('\t') for z in file] 
+    letters = [z[0]for z in x]  
+    numbers= [int(z[1])for z in x]  
+
+    new_list = []
+    for i in range(len(letters)):
+            new_list.append((numbers[i], letters[i]))
+
+    # Create a dictionary to group letters by numbers
+    grouped_data = {}
+    for number, letter in new_list:
+        if number not in grouped_data:
+            grouped_data[number] = []
+        grouped_data[number].append(letter)
+
+    # Convert the dictionary to a list of tuples
+    result = [(number, letters) for number, letters in grouped_data.items()] 
+
+    final_list = sorted(result, key=lambda x: x[0])
+    return final_list
+
+# print()
+# print(numbers)
+# print()
+# print(letters)
+# print()
+# print(new_list)
+# print()
+# print(grouped_data)
+# print()
+# print(result)
+# print()
+# print(final_list)
+
+#def pregunta_07():
+"""
     Retorne una lista de tuplas que asocien las columnas 0 y 1. Cada tupla
     contiene un valor posible de la columna 2 y una lista con todas las letras
     asociadas (columna 1) a dicho valor de la columna 2.
