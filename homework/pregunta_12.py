@@ -30,6 +30,8 @@ def pregunta_12():
         sorted_dict = {word: sums_dict[word] for word in sorted(sums_dict)}
     return sorted_dict
 
+#print()
+
 # print(x)
 # print()
 # print(words)
