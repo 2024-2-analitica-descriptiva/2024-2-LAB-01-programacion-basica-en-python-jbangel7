@@ -5,7 +5,7 @@ solo puede utilizar las funciones y librerias basicas de python. No puede
 utilizar pandas, numpy o scipy.
 """
 def pregunta_10():
-    file = open('files\input\data.csv', "r").readlines() #abro el archivo y lo leo linea por linea
+    file = open('files/input/data.csv', "r").readlines() #abro el archivo y lo leo linea por linea
     x =[z.replace('\n', '') for z in file] 
     x = [z.split('\t') for z in x] 
     result = [(sublist[0], len(sublist[3].split(',')), len(sublist[4].split(','))) for sublist in x]

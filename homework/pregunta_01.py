@@ -55,7 +55,7 @@ print(x)
 
 
 def pregunta_01():
-    file = open('files\input\data.csv', "r").readlines()
+    file = open('files/input/data.csv', "r").readlines()
     x = [z.replace('\n', '') for z in file] 
     x = [z.split('\t') for z in file] 
     valores = [int(z[1]) for z in x] 

@@ -42,7 +42,7 @@ print(tupla)
 
 
 def pregunta_03():
-    file = open('files\input\data.csv', "r").readlines() #abro el archivo y lo leo linea por linea
+    file = open('files/input/data.csv', "r").readlines() #abro el archivo y lo leo linea por linea
     x = [z.replace('\n', '') for z in file]              # reemplazo el salto de carro por espacio vacio
     x = [z.split('\t') for z in file]                    # genero el split a partir de la tabulación
     letters = [z[0] for z in file]                       # Creo una lista con todas las letras de la primera columna
